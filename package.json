@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint ./src/**/**.ts",
+    "lint:fix": "npm run lint -- --fix",
     "test": "jest --passWithNoTests --no-cache",
     "test:watchAll": "npm run test -- --watch-all",
     "test:coverage": "npm run -- --coverage",
