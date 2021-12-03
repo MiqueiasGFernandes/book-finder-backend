@@ -5,7 +5,7 @@ export type Book = {
     title: string,
     authors: string[],
     publisher: string,
-    publisherDate: Date,
+    publisherDate: string,
     description: string,
     pageCount: number,
     isbn: string,
