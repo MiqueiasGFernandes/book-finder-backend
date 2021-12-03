@@ -1,5 +1,5 @@
 import { Book } from '../../../domain/models/Book';
 
-export interface IGoogleApi {
+export default interface IBookApi {
     get(filter: string[]): Promise<Book[]>
 }

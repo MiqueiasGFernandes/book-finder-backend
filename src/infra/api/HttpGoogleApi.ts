@@ -1,13 +1,13 @@
 import fetch from 'node-fetch';
 import { injectable } from 'tsyringe';
-import { IGoogleApi } from '../../data/protocols/api/IGoogleApi';
+import IBookApi from '../../data/protocols/api/IBookApi';
 import { IConfig } from '../../data/protocols/config/IConfig';
 import InternalError from '../../domain/errors/InternalError';
 import { Book } from '../../domain/models/Book';
 import { GoogleBookType } from './GoogleBookType';
 
 @injectable()
-export default class HttpGoogleApi implements IGoogleApi {
+export default class HttpGoogleApi implements IBookApi {
   private readonly config: IConfig;
 
   constructor(config: IConfig) {
