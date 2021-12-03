@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/MiqueiasGFernandes/book-finder-backend#readme",
   "devDependencies": {
+    "@types/jest": "^27.0.3",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
     "commitizen": "^4.2.4",
@@ -33,11 +34,13 @@
     "husky": "^7.0.4",
     "jest": "^27.4.0",
     "nodemon": "^2.0.15",
+    "ts-jest": "^27.0.7",
     "typescript": "^4.5.2"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
     "node-fetch": "^3.1.0",
+    "reflect-metadata": "^0.1.13",
     "tsyringe": "^4.6.0"
   },
   "config": {
