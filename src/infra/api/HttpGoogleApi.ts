@@ -1,5 +1,6 @@
-import fetch from 'node-fetch';
 import { injectable } from 'tsyringe';
+import axios from 'axios'
+
 import IBookApi from '../../data/protocols/api/IBookApi';
 import { IConfig } from '../../data/protocols/config/IConfig';
 import InternalError from '../../domain/errors/InternalError';
@@ -18,8 +19,8 @@ export default class HttpGoogleApi implements IBookApi {
     const queryFilter = filter.join('+')
     const queryUrl = `${this.config.getString('GET_BOOKS_API_URL')}?q=${queryFilter}`
 
-    const responseFromGoogleApi = await fetch(queryUrl);
-    const dataFromGoogleApi = await responseFromGoogleApi.json() as unknown as GoogleBookType[];
+    const { data: responseFromGoogleApi } = await axios.get(queryUrl);
+    const dataFromGoogleApi = responseFromGoogleApi as GoogleBookType
 
     if (!(dataFromGoogleApi instanceof Array)) {
       throw new InternalError('Invalid data from Google API')
