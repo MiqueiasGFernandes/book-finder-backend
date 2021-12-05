@@ -1,4 +1,4 @@
-import { injectable } from 'tsyringe';
+import { inject, injectable } from 'tsyringe';
 import axios from 'axios'
 
 import IBookApi from '../../data/protocols/api/IBookApi';
@@ -11,7 +11,7 @@ import { GoogleBookType } from './GoogleBookType';
 export default class HttpGoogleApi implements IBookApi {
   private readonly config: IConfig;
 
-  constructor(config: IConfig) {
+  constructor(@inject('IConfig') config: IConfig) {
     this.config = config;
   }
 

@@ -1,4 +1,4 @@
-import { injectable } from 'tsyringe';
+import { inject, injectable } from 'tsyringe';
 import { Book } from '../../domain/models/Book';
 import IGetBook from '../../domain/usecases/IGetBooks';
 import BookRepository from '../repositories/BookRepository';
@@ -7,7 +7,7 @@ import BookRepository from '../repositories/BookRepository';
 export default class GetBook implements IGetBook {
   private readonly bookRepository: BookRepository;
 
-  constructor(bookRepository: BookRepository) {
+  constructor(@inject('BookRepository') bookRepository: BookRepository) {
     this.bookRepository = bookRepository
   }
 

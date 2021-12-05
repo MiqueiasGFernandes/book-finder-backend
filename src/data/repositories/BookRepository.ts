@@ -1,4 +1,4 @@
-import { injectable } from 'tsyringe';
+import { inject, injectable } from 'tsyringe';
 import { Book } from '../../domain/models/Book';
 import IBookApi from '../protocols/api/IBookApi';
 
@@ -6,7 +6,7 @@ import IBookApi from '../protocols/api/IBookApi';
 export default class BookRepository {
   private readonly googleBooksApi: IBookApi
 
-  constructor(googleBooksApi: IBookApi) {
+  constructor(@inject('IBookApi') googleBooksApi: IBookApi) {
     this.googleBooksApi = googleBooksApi;
   }
 
