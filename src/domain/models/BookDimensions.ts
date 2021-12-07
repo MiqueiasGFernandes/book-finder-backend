@@ -1,4 +1,4 @@
 export type BookDimensions = {
-    height: number,
-    width: number
+    height?: number | null,
+    width?: number | null
 }

@@ -4,16 +4,16 @@ export type GoogleBookType = {
   volumeInfo: {
     title: string,
     authors: string[]
+    industryIdentifiers: Record<string, string>[]
+    publisher: string,
+    publisherDate: string,
+    description: string,
+    width?: string,
+    height?: string,
+    printType: string,
+    categories: string[],
+    averageRating: number,
+    ratingsCount: number,
+    pageCount: number
   },
-  publisher: string,
-  publisherDate: string,
-  description: string,
-  industryIdentifiers: Record<string, string>[]
-  width: string,
-  height: string,
-  printType: string,
-  categories: string[],
-  averageRating: number,
-  ratingsCount: number,
-  pageCount: number
 }

@@ -9,7 +9,7 @@ export type Book = {
     description: string,
     pageCount: number,
     isbn: string,
-    dimensions: BookDimensions,
+    dimensions?: BookDimensions,
     type: string,
     categories: string[],
     rating: BookRating,

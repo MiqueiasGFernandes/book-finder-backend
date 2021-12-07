@@ -16,11 +16,11 @@ export default class HttpGoogleApi implements IBookApi {
   }
 
   async get(filter: string[]): Promise<Book[]> {
-    const queryFilter = filter.join('+')
+    const queryFilter = filter.join('+');
     const queryUrl = `${this.config.getString('GET_BOOKS_API_URL')}?q=${queryFilter}`
 
     const { data: responseFromGoogleApi } = await axios.get(queryUrl);
-    const dataFromGoogleApi = responseFromGoogleApi as GoogleBookType
+    const dataFromGoogleApi = responseFromGoogleApi.items as GoogleBookType[]
 
     if (!(dataFromGoogleApi instanceof Array)) {
       throw new InternalError('Invalid data from Google API')
@@ -29,20 +29,20 @@ export default class HttpGoogleApi implements IBookApi {
     const bookListMap: Book[] = dataFromGoogleApi.map((book) => ({
       title: book.volumeInfo.title,
       authors: book.volumeInfo.authors,
-      publisher: book.publisher,
-      publisherDate: book.publisherDate,
-      description: book.description,
-      pageCount: book.pageCount,
-      isbn: book.industryIdentifiers[0].identifier,
+      publisher: book.volumeInfo.publisher,
+      publisherDate: book.volumeInfo.publisherDate,
+      description: book.volumeInfo.description,
+      pageCount: book.volumeInfo.pageCount,
+      isbn: book.volumeInfo.industryIdentifiers[0].identifier,
       dimensions: {
-        width: Number(book.width.replace(' ', '').replace('cm', '')),
-        height: Number(book.height.replace(' ', '').replace('cm', '')),
+        width: book.volumeInfo.width ? Number(book.volumeInfo.width.replace(' ', '').replace('cm', '')) : null,
+        height: book.volumeInfo.height ? Number(book.volumeInfo.height.replace(' ', '').replace('cm', '')) : null,
       },
-      type: book.printType,
-      categories: book.categories,
+      type: book.volumeInfo.printType,
+      categories: book.volumeInfo.categories,
       rating: {
-        average: book.averageRating,
-        count: book.ratingsCount,
+        average: book.volumeInfo.averageRating,
+        count: book.volumeInfo.ratingsCount,
       },
     }))
 

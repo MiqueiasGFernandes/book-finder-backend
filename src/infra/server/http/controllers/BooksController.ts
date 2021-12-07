@@ -12,7 +12,7 @@ export default class BooksController {
 
   async get(request: Request, response: Response): Promise<Response> {
     try {
-      const result = await this.getBook.get(request.query.filters as string[]);
+      const result = await this.getBook.get(String(request.query.filters).split('+') as string[]);
 
       return response.status(200).send({
         data: result,
