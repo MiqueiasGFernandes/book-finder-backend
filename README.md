@@ -17,14 +17,14 @@ All source code it's in 'src' path
 # Scripts
 
 ```
-  start - Run development server
-  build - Generate Typescript build
-  lint - Search by code styling errors
-  lint:fix - Search and fix code styling errors
-  test - Run unit tests
-  test:watchAll - Run unit tests in "watch" mode
-  test:coverage - Run unit tests with coverage search
-  commit - Perform commit using "Conventional Commit" pattern using "commizen" library
+- start - Run development server
+- build - Generate Typescript build
+- lint - Search by code styling errors
+- lint:fix - Search and fix code styling errors
+- test - Run unit tests
+- test:watchAll - Run unit tests in "watch" mode
+- test:coverage - Run unit tests with coverage search
+- commit - Perform commit using "Conventional Commit" pattern using "commizen" library
 ```
 
 
