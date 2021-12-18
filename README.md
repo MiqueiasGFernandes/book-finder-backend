@@ -1,3 +1,4 @@
+[![Coverage Status](https://coveralls.io/repos/github/MiqueiasGFernandes/book-finder-backend/badge.svg?branch=master)](https://coveralls.io/github/MiqueiasGFernandes/book-finder-backend?branch=master)
 [![Build Status](https://app.travis-ci.com/MiqueiasGFernandes/book-finder-backend.svg?branch=master)](https://app.travis-ci.com/MiqueiasGFernandes/book-finder-backend)
 # BOOK FINDER BACKEND
 
