@@ -1,3 +1,4 @@
+[![Build Status](https://app.travis-ci.com/MiqueiasGFernandes/book-finder-backend.svg?branch=master)](https://app.travis-ci.com/MiqueiasGFernandes/book-finder-backend)
 # BOOK FINDER BACKEND
 
 ## Objective
