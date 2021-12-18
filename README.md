@@ -14,7 +14,7 @@ All source code it's in 'src' path
 - main: Layer to call and initialize all project code
 ```
 
-# Scripts
+## Scripts
 
 ```
 - start - Run development server
