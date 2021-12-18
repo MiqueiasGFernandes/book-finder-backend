@@ -10,7 +10,7 @@
     "lint:fix": "npm run lint -- --fix",
     "test": "jest --passWithNoTests --no-cache",
     "test:watchAll": "npm run test -- --watch-all",
-    "test:coverage": "npm run -- --coverage",
+    "test:coverage": "npm run test -- --coverage",
     "commit": "cz"
   },
   "repository": {
